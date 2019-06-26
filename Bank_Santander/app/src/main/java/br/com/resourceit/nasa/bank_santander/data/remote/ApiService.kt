@@ -1,6 +1,7 @@
 package br.com.resourceit.nasa.bank_santander.data.remote
 
-import br.com.resourceit.nasa.bank_santander.data.remote.model.ResponseCell
+import br.com.resourceit.nasa.bank_santander.data.remote.model.CellResponse
+import br.com.resourceit.nasa.bank_santander.data.remote.model.FundResponse
 import br.com.resourceit.nasa.bank_santander.utils.URL_SERVICE
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,7 +13,10 @@ import retrofit2.http.GET
 interface ApiService {
 
     @GET("cells.json")
-    fun getCellsList(): Call<ResponseCell>
+    fun getCellsList(): Call<CellResponse>
+
+    @GET("fund.json")
+    fun getFundList(): Call<FundResponse>
 
     //
     companion object {
