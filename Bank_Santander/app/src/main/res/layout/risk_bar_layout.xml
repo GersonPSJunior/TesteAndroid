@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+    <View android:id="@+id/RiskBarLightGreen"
+          android:layout_width="wrap_content"
+          android:layout_height="6dp"
+          android:background="#ADFA9E"
+          android:layout_weight="1"
+          app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintEnd_toStartOf="@+id/RiskBarGreen"
+          tools:layout_editor_absoluteY="432dp"/>
+
+    <View android:id="@+id/RiskBarGreen"
+          android:layout_width="wrap_content"
+          android:layout_height="6dp"
+          android:background="#33A24E"
+          android:layout_weight="1"
+          app:layout_constraintStart_toEndOf="@+id/RiskBarLightGreen"
+          app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/RiskBarYellow"
+          app:layout_constraintTop_toTopOf="@+id/RiskBarLightGreen"
+          app:layout_constraintBottom_toBottomOf="@+id/RiskBarLightGreen"/>
+
+
+    <View android:id="@+id/RiskBarRed"
+          android:layout_width="wrap_content"
+          android:layout_height="6dp"
+          android:background="#FFE752"
+          android:layout_weight="1"
+          app:layout_constraintStart_toEndOf="@+id/RiskBarOrange"
+          app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/RiskBarOrange"
+          app:layout_constraintBottom_toBottomOf="@+id/RiskBarOrange"/>
+
+    <View android:id="@+id/RiskBarOrange"
+          android:layout_width="wrap_content"
+          android:layout_height="6dp"
+          android:background="#EE7B2E"
+          android:layout_weight="1"
+          app:layout_constraintStart_toEndOf="@+id/RiskBarYellow"
+          app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/RiskBarRed"
+          app:layout_constraintBottom_toBottomOf="@+id/RiskBarYellow"
+          app:layout_constraintTop_toTopOf="@+id/RiskBarYellow" app:layout_constraintVertical_bias="1.0"/>
+
+    <View android:id="@+id/RiskBarYellow"
+          android:layout_width="wrap_content"
+          android:layout_height="6dp"
+          android:background="#F00707"
+          android:layout_weight="1"
+          app:layout_constraintStart_toEndOf="@+id/RiskBarGreen" app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintEnd_toStartOf="@+id/RiskBarOrange"
+          app:layout_constraintTop_toTopOf="@+id/RiskBarGreen"
+          app:layout_constraintBottom_toBottomOf="@+id/RiskBarGreen"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
