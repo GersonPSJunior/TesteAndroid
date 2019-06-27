@@ -1,4 +1,4 @@
-package br.com.resourceit.nasa.bank_santander
+package br.com.resourceit.nasa.bank_santander.ui
 
 import android.view.Gravity
 import android.view.View
