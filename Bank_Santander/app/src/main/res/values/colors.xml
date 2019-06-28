@@ -10,4 +10,6 @@
     <color name="colorRiskBarYellow">#ffc011</color>
     <color name="colorRiskBarGreen">#4ac16c</color>
     <color name="colorRiskBarLightGreen">#74da61</color>
+    <color name="colorTextTitle">#ff333333</color>
+    <color name="colorTextCheckbox">#ffacacac</color>
 </resources>
