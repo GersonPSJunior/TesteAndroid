@@ -5,4 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorRedDark">#861616</color>
     <color name="colorRed">#DA0101</color>
+    <color name="colorTextTitle">#ff333333</color>
+    <color name="colorTextCheckbox">#ffacacac</color>
 </resources>
