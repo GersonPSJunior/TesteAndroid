@@ -35,54 +35,54 @@ class InvestmentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        onRefresh()
-        presenter()
+        onRefresh(view)
+        presenter(view)
     }
 
-    private fun presenter() {
+    private fun presenter(view:View) {
         FundRepository().getFundList(object : BaseCallback<ScreenModel> {
             override fun onSuccessful(value: ScreenModel) {
 
-                recycler.apply {
+                view.recycler.apply {
                     adapter = AdapterMainScreen(value.info)
                 }
 
-                recyclerDownInfo.apply {
+                view.recyclerDownInfo.apply {
                     adapter = AdapterMainScreen(value.downInfo)
                 }
 
 
-                textViewFundInMonth.text = "${value.moreInfo.month.fund}"
-                textViewFundInYear.text = "${value.moreInfo.year.fund}"
-                textViewFundTwelveMonth.text = "${value.moreInfo.months.fund}"
+                view.textViewFundInMonth.text = "${value.moreInfo.month.fund}"
+                view.textViewFundInYear.text = "${value.moreInfo.year.fund}"
+                view.textViewFundTwelveMonth.text = "${value.moreInfo.months.fund}"
 
-                textViewCDIInMonth.text = "${value.moreInfo.month.cDI}"
-                textViewCDIInYear.text = "${value.moreInfo.year.cDI}"
-                textViewCDITwelveMonth.text = "${value.moreInfo.months.cDI}"
+                view.textViewCDIInMonth.text = "${value.moreInfo.month.cDI}"
+                view.textViewCDIInYear.text = "${value.moreInfo.year.cDI}"
+                view.textViewCDITwelveMonth.text = "${value.moreInfo.months.cDI}"
 
-                textViewInfoTitle.text = value.infoTitle
-                textViewRiskTitle.text = value.riskTitle
-                textViewDefinition.text = value.definition
-                textViewWhatIs.text = value.whatIs
-                textViewFundName.text = value.fundName
-                textViewTitle.text = value.title
-                refresh.isRefreshing = false
-                mainConstraint.visibility = View.VISIBLE
+                view.textViewInfoTitle.text = value.infoTitle
+                view.textViewRiskTitle.text = value.riskTitle
+                view.textViewDefinition.text = value.definition
+                view.textViewWhatIs.text = value.whatIs
+                view.textViewFundName.text = value.fundName
+                view.textViewTitle.text = value.title
+                view.refresh.isRefreshing = false
+                view.mainConstraint.visibility = View.VISIBLE
             }
 
             override fun onUnsuccessful(error: String) {
                 Toast.makeText(context, error, Toast.LENGTH_LONG).show()
-                refresh.isRefreshing = false
+                view.refresh.isRefreshing = false
             }
 
         })
     }
 
-    private fun onRefresh() {
+    private fun onRefresh(view:View) {
         refresh.isRefreshing = true
         refresh.setOnRefreshListener {
             mainConstraint.visibility = View.INVISIBLE
-            presenter()
+            presenter(view)
         }
     }
 

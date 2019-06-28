@@ -30,11 +30,11 @@ class AdapterMainScreen(var list: List<InfoModel>) : RecyclerView.Adapter<Adapte
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         var model: InfoModel = list.get(position)
         holder.textName.text = model.name
-        if(model.data== null){
+        if (model.data == null) {
             holder.textData.text = "Baixar"
-            holder.textData.setTextColor(Color.RED)
+            holder.textData.setTextColor(Color.parseColor("#da0101"))
             holder.setVisibleImage()
-        }else {
+        } else {
             holder.textData.text = model.data
 
         }
@@ -46,9 +46,9 @@ class AdapterMainScreen(var list: List<InfoModel>) : RecyclerView.Adapter<Adapte
         var textName: TextView = textViewInfoName
         var textData: TextView = textViewInfoData
 
-        fun setVisibleImage(){
-            imageViewArrow.visibility=View.VISIBLE
-            imageViewUnder.visibility=View.VISIBLE
+        fun setVisibleImage() {
+            imageViewArrow.visibility = View.VISIBLE
+            imageViewUnder.visibility = View.VISIBLE
         }
     }
 
