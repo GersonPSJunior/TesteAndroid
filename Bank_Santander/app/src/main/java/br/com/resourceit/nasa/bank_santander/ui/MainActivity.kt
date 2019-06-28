@@ -1,5 +1,6 @@
 package br.com.resourceit.nasa.bank_santander.ui
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,31 +26,14 @@ class MainActivity : AppCompatActivity(), BankContract.View {
             return@setOnNavigationItemSelectedListener true
         }
 
-        FundRepository().getFundList(object : BaseCallback<ScreenModel>{
-            override fun onSuccessful(value: ScreenModel) {
-                recycler.apply {
-                    layoutManager = LinearLayoutManager(this@MainActivity)
-                    adapter = AdapterMainScreen(value.info)
-                }
-
-                recyclerDownInfo.apply {
-                    layoutManager = LinearLayoutManager(this@MainActivity)
-                    adapter = AdapterMainScreen(value.downInfo)
-                }
-            }
-
-            override fun onUnsuccessful(error: String) {
-            }
-
-        })
-
-
-
     }
     override fun showFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().add(R.id.frameBank, fragment).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frameBank, fragment).commit()
     }
     override fun enableNavigation(result: Boolean) {
         for(i in 1..bottomNavigation.size) bottomNavigation.menu.getItem(i).isEnabled = result
     }
+
+    override fun getContext(): Context = this
+
 }

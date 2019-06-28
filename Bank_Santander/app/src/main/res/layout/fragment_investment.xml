@@ -10,7 +10,7 @@
             android:descendantFocusability="blocksDescendants"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".MainActivity">
+           >
         <TextView
                 android:text="Investimento"
                 android:layout_width="wrap_content"
@@ -149,8 +149,10 @@
                 android:text="13,01%"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textViewFundInYear" app:layout_constraintEnd_toEndOf="@+id/textViewFundInMonth"
-                app:layout_constraintStart_toStartOf="@+id/textViewFundInMonth" android:layout_marginTop="8dp"
+                android:id="@+id/textViewFundInYear"
+                app:layout_constraintEnd_toEndOf="@+id/textViewFundInMonth"
+                app:layout_constraintStart_toStartOf="@+id/textViewFundInMonth"
+                android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/textViewFundInMonth"/>
         <TextView
                 android:text="17,9%"
@@ -197,7 +199,9 @@
                 android:layout_height="0dp"
                 app:layout_constraintTop_toBottomOf="@+id/view2"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="8dp"
                 app:layout_constraintHorizontal_bias="0.0"
                 tools:listitem="@layout/card_main_screen"/>
@@ -209,10 +213,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:listitem="@layout/card_main_screen"
-                app:layout_constraintTop_toBottomOf="@+id/recycler" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/button"/>
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/button"/>
         <Button
                 android:text="Button"
                 android:layout_width="wrap_content"
