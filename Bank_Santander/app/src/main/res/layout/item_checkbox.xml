@@ -8,5 +8,5 @@
         android:layout_marginEnd="41dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/itemCheckBox" android:textColor="@color/colorTextCheckbox"
+        android:id="@+id/itemCheckBox" android:textColor="@color/colorTextRegular"
         android:textSize="16sp"/>
