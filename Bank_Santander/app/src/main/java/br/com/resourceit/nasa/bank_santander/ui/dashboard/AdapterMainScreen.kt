@@ -1,4 +1,4 @@
-package br.com.resourceit.nasa.bank_santander.ui
+package br.com.resourceit.nasa.bank_santander.ui.dashboard
 
 import android.graphics.Color
 import android.view.LayoutInflater

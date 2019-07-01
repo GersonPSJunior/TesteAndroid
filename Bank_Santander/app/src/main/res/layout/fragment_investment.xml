@@ -16,7 +16,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/mainConstraint"
-                android:visibility="visible"
+                android:visibility="invisible"
         >
             <TextView
                     android:text="Investimento"
