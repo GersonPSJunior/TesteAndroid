@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), BankContract.View {
         supportFragmentManager.beginTransaction().replace(R.id.frameBank, fragment).commit()
     }
     override fun enableNavigation(result: Boolean) {
-        for(i in 1..bottomNavigation.size) bottomNavigation.menu.getItem(i).isEnabled = result
+        for(i in 0..bottomNavigation.size) bottomNavigation.menu.getItem(i).isEnabled = result
     }
 
     override fun getContext(): Context = this
