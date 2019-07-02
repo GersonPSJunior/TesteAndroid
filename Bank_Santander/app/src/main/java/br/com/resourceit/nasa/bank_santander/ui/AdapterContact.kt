@@ -1,18 +1,26 @@
 package br.com.resourceit.nasa.bank_santander.ui
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import br.com.resourceit.nasa.bank_santander.R
 import br.com.resourceit.nasa.bank_santander.data.remote.model.CellModel
 import br.com.resourceit.nasa.bank_santander.data.remote.model.Type
 import br.com.resourceit.nasa.bank_santander.data.remote.model.TypeField
+import br.com.resourceit.nasa.bank_santander.utils.Validation
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.item_checkbox.view.*
+import kotlinx.android.synthetic.main.item_text_input_layout.view.*
 
 
 class AdapterContact(private val context: Context, var list: List<CellModel>) : RecyclerView.Adapter<AdapterContact.MyViewHolder>() {
@@ -22,8 +30,8 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) : 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
         return when(list[viewType].type){
-                Type.field.index -> { MyViewHolder(configureField(list[viewType], viewType,LayoutInflater.from(context)
-                    .inflate(R.layout.item_text_input_layout, parent, false) as TextInputLayout) )
+            Type.field.index -> {
+                MyViewHolder(configureField(list[viewType], viewType, LayoutInflater.from(context).inflate(R.layout.item_text_input_layout, parent, false) as ViewGroup))
             }
             Type.text.index -> {
                 MyViewHolder(configureTextView(list[viewType], LayoutInflater.from(context)
@@ -48,13 +56,37 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) : 
 
     }
 
-    private fun configureField(cellModel: CellModel, position: Int, itemView: TextInputLayout): View {
-        itemView.hint = cellModel.message
-        itemView.id = cellModel.id
-        itemView.layoutParams = configureMargin(cellModel.topSpacing.toInt(), 0, itemView)
+    private fun configureField(cellModel: CellModel, position: Int, itemView: ViewGroup): View {
+        val child = itemView.getChildAt(0) as TextInputLayout
+        child.hint = cellModel.message
+        child.id = cellModel.id
+        child.layoutParams = configureMargin(cellModel.topSpacing.toInt(), 0, child)
+        if(cellModel.typefield is Double)
+            cellModel.typefield = (cellModel.typefield as Double).toInt()
         when (cellModel.typefield) {
             TypeField.text.index -> {
+                child.editText?.setOnFocusChangeListener { v, hasFocus ->
+                    if(!hasFocus)
+                        if(Validation.requiredField(child.editText!!.text.toString())){
+                            child.error = " "
+                            return@setOnFocusChangeListener
+                        }else child.isErrorEnabled = false
 
+                }
+//                child.editText?.addTextChangedListener(object : TextWatcher{
+//                    override fun afterTextChanged(s: Editable?) {
+//
+//                    }
+//
+//                    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+//
+//                    }
+//
+//                    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+//
+//                    }
+//
+//                })
             }
             TypeField.email.index -> {
 
@@ -64,7 +96,7 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) : 
             }
         }
 
-        itemsList[cellModel.id] = itemView
+        itemsList[cellModel.id] = child
         showVisible(cellModel, !cellModel.hidden, cellModel.id)
         return itemView
     }
@@ -106,12 +138,16 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) : 
                 for(item in itemsList) {
                     if(item.key == cell.id) {
                         if(cell.type == Type.field.index) {
-
+                            //if(item.value.textInputEditText.text != null)
+                                Toast.makeText(context, " Clickou ${item.value.textInputEditText.text.toString()}", Toast.LENGTH_SHORT).show()
                         }
+//                        else if(cell.type == Type.checkbox.index){
+//                            Toast.makeText(context, "Checkbox validado ${item.value.itemCheckBox.isChecked}", Toast.LENGTH_SHORT ).show()
+//                        }
                     }
                 }
-
             }
+
         }
         itemsList[cellModel.id] = itemView
         return itemView
@@ -135,5 +171,9 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) : 
     }
 
     data class MyViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView) {
+        init {
+
+        }
+
     }
 }

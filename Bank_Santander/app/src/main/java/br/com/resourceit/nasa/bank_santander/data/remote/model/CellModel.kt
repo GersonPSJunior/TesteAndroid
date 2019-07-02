@@ -5,7 +5,7 @@ data class CellModel(
     val id: Int,
     val type: Int,
     val message: String,
-    val typefield: Any,
+    var typefield: Any,
     var hidden: Boolean,
     val topSpacing: Double,
     val show: Int,
