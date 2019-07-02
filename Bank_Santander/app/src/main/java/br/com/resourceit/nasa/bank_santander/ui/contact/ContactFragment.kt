@@ -33,6 +33,7 @@ class ContactFragment : Fragment(), ContactContract.View {
 
     override fun showRecycler(cells: List<CellModel>) {
         recyclerContact.apply {
+
             adapter = AdapterContact(context, cells)
         }
     }

@@ -8,11 +8,11 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import br.com.resourceit.nasa.bank_santander.R
 import br.com.resourceit.nasa.bank_santander.data.remote.model.CellModel
 import br.com.resourceit.nasa.bank_santander.data.remote.model.Type
-import com.google.android.material.textfield.TextInputLayout
-import br.com.resourceit.nasa.bank_santander.R
 import br.com.resourceit.nasa.bank_santander.data.remote.model.TypeField
+import com.google.android.material.textfield.TextInputLayout
 
 
 class AdapterContact(private val context: Context, var list: List<CellModel>) : RecyclerView.Adapter<AdapterContact.MyViewHolder>() {
@@ -22,9 +22,8 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) : 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
         return when(list[viewType].type){
-            Type.field.index -> {
-                MyViewHolder( configureField(list[viewType], viewType, LayoutInflater.from(context)
-                    .inflate(R.layout.item_text_input_layout, parent, false) as TextInputLayout))
+                Type.field.index -> { MyViewHolder(configureField(list[viewType], viewType,LayoutInflater.from(context)
+                    .inflate(R.layout.item_text_input_layout, parent, false) as TextInputLayout) )
             }
             Type.text.index -> {
                 MyViewHolder(configureTextView(list[viewType], LayoutInflater.from(context)
@@ -53,7 +52,6 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) : 
         itemView.hint = cellModel.message
         itemView.id = cellModel.id
         itemView.layoutParams = configureMargin(cellModel.topSpacing.toInt(), 0, itemView)
-        //verifyTypeField(cellModel)
         when (cellModel.typefield) {
             TypeField.text.index -> {
 
@@ -69,10 +67,6 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) : 
         itemsList[cellModel.id] = itemView
         showVisible(cellModel, !cellModel.hidden, cellModel.id)
         return itemView
-    }
-
-    private fun verifyTypeField(cellModel: CellModel) {
-
     }
 
     private fun configureMargin(top: Int, bottom: Int, itemView: View): ViewGroup.MarginLayoutParams {
@@ -92,7 +86,7 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) : 
                 showVisible(cellModel, false, cellModel.show)
         }
 
-        itemsList.put(cellModel.id, itemView)
+        itemsList[cellModel.id] = itemView
         return itemView
     }
 
@@ -119,7 +113,7 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) : 
 
             }
         }
-        itemsList.put(cellModel.id, itemView)
+        itemsList[cellModel.id] = itemView
         return itemView
     }
 
@@ -141,7 +135,5 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) : 
     }
 
     data class MyViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-
     }
 }
