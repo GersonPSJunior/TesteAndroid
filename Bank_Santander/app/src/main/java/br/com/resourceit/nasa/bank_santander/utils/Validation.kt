@@ -18,6 +18,7 @@ object Validation {
 
     fun insert(editText: EditText) {
 
+
         editText.addTextChangedListener(object : TextWatcher {
 
             var isUpdating: Boolean = true

@@ -112,7 +112,16 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) :
             }
             TypeField.telnumber.name -> {
 
+
                 child.editText?.let {
+                    it.setOnFocusChangeListener { v, hasFocus ->
+                        if (!hasFocus)
+                            if (Validation.unMask(it.text.toString()).length <10) {
+                                child.error = " "
+                                return@setOnFocusChangeListener
+                            } else child.isErrorEnabled = false
+
+                    }
                     it.inputType = InputType.TYPE_CLASS_NUMBER
                     Validation.insert(it)
                 }
