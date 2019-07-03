@@ -14,12 +14,13 @@ import br.com.resourceit.nasa.bank_santander.R
 import br.com.resourceit.nasa.bank_santander.data.remote.model.CellModel
 import br.com.resourceit.nasa.bank_santander.data.remote.model.Type
 import br.com.resourceit.nasa.bank_santander.data.remote.model.TypeField
+import br.com.resourceit.nasa.bank_santander.ui.contact.ContactContract
 import br.com.resourceit.nasa.bank_santander.utils.Validation
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.item_text_input_layout.view.*
 
 
-class AdapterContact(private val context: Context, var list: List<CellModel>) :
+class AdapterContact(private val context: Context, var list: List<CellModel>, var view:ContactContract.View) :
     RecyclerView.Adapter<AdapterContact.MyViewHolder>() {
 
     var itemsList: MutableMap<Int, View> = mutableMapOf()
@@ -177,6 +178,8 @@ class AdapterContact(private val context: Context, var list: List<CellModel>) :
                                 " Clickou ${item.value.textInputEditText.text.toString()}",
                                 Toast.LENGTH_SHORT
                             ).show()
+                            view.enabledRecycler(false)
+
                         }
 //                        else if(cell.type == Type.checkbox.index){
 //                            Toast.makeText(context, "Checkbox validado ${item.value.itemCheckBox.isChecked}", Toast.LENGTH_SHORT ).show()

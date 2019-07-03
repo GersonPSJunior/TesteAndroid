@@ -8,6 +8,8 @@ class ContactContract {
         fun showRecycler(cells:List<CellModel>)
 
         fun notification(error: String)
+
+        fun enabledRecycler(key:Boolean)
     }
     interface Presenter{
         fun loadView()

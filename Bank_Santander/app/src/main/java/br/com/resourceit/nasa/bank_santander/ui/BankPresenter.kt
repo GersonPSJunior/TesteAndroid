@@ -9,7 +9,7 @@ class BankPresenter(val view : BankContract.View) : BankContract.Presenter {
     override fun identifyItemClicked(menuItem: MenuItem) {
         when(menuItem.itemId){
             R.id.menuInvestment -> view.showFragment(InvestmentFragment(view))
-            R.id.menuContact -> view.showFragment(ContactFragment())
+            R.id.menuContact -> view.showFragment(ContactFragment(view))
         }
     }
 

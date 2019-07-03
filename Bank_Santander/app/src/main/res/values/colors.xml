@@ -5,6 +5,7 @@
     <color name="colorAccent">#ffacacac</color>
     <color name="colorRedDark">#861616</color>
     <color name="colorRed">#DA0101</color>
+    <color name="colorTransparenceRed">#EB7676</color>
     <color name="colorRiskBarRed">#ff3634</color>
     <color name="colorRiskBarOrange">#ff742c</color>
     <color name="colorRiskBarYellow">#ffc011</color>

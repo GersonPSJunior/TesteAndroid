@@ -308,7 +308,7 @@
                     android:layout_marginEnd="30dp"
                     android:layout_marginBottom="42dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:background="@drawable/buttom_radius_red"
+                    android:background="@drawable/selector_button"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
