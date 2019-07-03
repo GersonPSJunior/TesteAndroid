@@ -4,10 +4,10 @@ import br.com.resourceit.nasa.bank_santander.data.remote.model.CellModel
 import br.com.resourceit.nasa.bank_santander.data.repository.CellRepository
 import br.com.resourceit.nasa.bank_santander.utils.BaseCallback
 
-class ContactPresenter(val view: ContactContract.View) : ContactContract.Presenter{
+class ContactPresenter(val view: ContactContract.View) : ContactContract.Presenter {
 
     override fun loadView() {
-        CellRepository().getCellsList(object : BaseCallback<List<CellModel>>{
+        CellRepository().getCellsList(object : BaseCallback<List<CellModel>> {
             override fun onSuccessful(value: List<CellModel>) {
                 view.showRecycler(value)
             }

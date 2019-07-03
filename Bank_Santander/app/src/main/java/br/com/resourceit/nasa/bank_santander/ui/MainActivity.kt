@@ -1,15 +1,11 @@
 package br.com.resourceit.nasa.bank_santander.ui
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import br.com.resourceit.nasa.bank_santander.R
-import br.com.resourceit.nasa.bank_santander.data.remote.model.ScreenModel
-import br.com.resourceit.nasa.bank_santander.data.repository.FundRepository
-import br.com.resourceit.nasa.bank_santander.utils.BaseCallback
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), BankContract.View {

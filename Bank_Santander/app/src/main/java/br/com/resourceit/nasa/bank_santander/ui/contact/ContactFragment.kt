@@ -2,17 +2,15 @@ package br.com.resourceit.nasa.bank_santander.ui.contact
 
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-
+import androidx.fragment.app.Fragment
 import br.com.resourceit.nasa.bank_santander.R
 import br.com.resourceit.nasa.bank_santander.data.remote.model.CellModel
 import br.com.resourceit.nasa.bank_santander.ui.AdapterContact
 import kotlinx.android.synthetic.main.fragment_contact.*
-import kotlinx.android.synthetic.main.fragment_investment.*
 
 class ContactFragment : Fragment(), ContactContract.View {
 
