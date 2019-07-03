@@ -6,7 +6,7 @@
         android:layout_height="wrap_content">
 
     <TextView
-            android:text="Taxa de administração"
+            android:text=""
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textViewInfoName" app:layout_constraintStart_toStartOf="parent"
@@ -15,7 +15,7 @@
             app:layout_constraintEnd_toStartOf="@+id/textViewInfoData" android:layout_marginEnd="87dp"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
-            android:text="0,50%"
+            android:text=""
             android:textColor="#333333"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

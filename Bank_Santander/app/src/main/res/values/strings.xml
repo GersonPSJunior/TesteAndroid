@@ -3,4 +3,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="investimento">Investimento</string>
+    <string name="suspension_point">...</string>
+    <string name="fundo">Fundo</string>
+    <string name="cdi">CDI</string>
+    <string name="in_month">No mês</string>
+    <string name="in_year">No ano</string>
+    <string name="twelve_months">12 meses</string>
+    <string name="investir">Investir</string>
+    <string name="sair">Sair</string>
 </resources>

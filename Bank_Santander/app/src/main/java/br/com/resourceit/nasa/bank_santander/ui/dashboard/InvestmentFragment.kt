@@ -1,6 +1,7 @@
 package br.com.resourceit.nasa.bank_santander.ui.dashboard
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +19,7 @@ import java.util.*
 class InvestmentFragment(var viewHome : BankContract.View) : Fragment(), InvestmentContract.ViewInvestment {
 
 
-    val random = Random()
+    private val random = Random()
     lateinit var presenter: InvestmentContract.PresenterInvestment
 
     override fun onCreateView(
@@ -104,7 +105,7 @@ class InvestmentFragment(var viewHome : BankContract.View) : Fragment(), Investm
         RiskBarLightGreen.visibility = View.VISIBLE
     }
 
-    fun rand(): Int {
+    private fun rand(): Int {
         return random.nextInt(7 - 2) + 1 // from(incluso) e to(excluso)
     }
 
@@ -122,14 +123,15 @@ class InvestmentFragment(var viewHome : BankContract.View) : Fragment(), Investm
         setTextValues(value)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setTextValues(value: ScreenModel) {
-        textViewFundInMonth.text = "${value.moreInfo.month.fund}"
-        textViewFundInYear.text = "${value.moreInfo.year.fund}"
-        textViewFundTwelveMonth.text = "${value.moreInfo.months.fund}"
+        textViewFundInMonth.text = "${value.moreInfo.month.fund}%"
+        textViewFundInYear.text = "${value.moreInfo.year.fund}%"
+        textViewFundTwelveMonth.text = "${value.moreInfo.months.fund}%"
 
-        textViewCDIInMonth.text = "${value.moreInfo.month.cDI}"
-        textViewCDIInYear.text = "${value.moreInfo.year.cDI}"
-        textViewCDITwelveMonth.text = "${value.moreInfo.months.cDI}"
+        textViewCDIInMonth.text = "${value.moreInfo.month.cDI}%"
+        textViewCDIInYear.text = "${value.moreInfo.year.cDI}%"
+        textViewCDITwelveMonth.text = "${value.moreInfo.months.cDI}%"
 
         textViewInfoTitle.text = value.infoTitle
         textViewRiskTitle.text = value.riskTitle

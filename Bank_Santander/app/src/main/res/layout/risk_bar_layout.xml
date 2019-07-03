@@ -21,35 +21,40 @@
                 app:srcCompat="@mipmap/ic_shape"
                 android:id="@+id/imageArrowLightGreen"
                 android:visibility="invisible"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="Arrow"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@mipmap/ic_shape"
                 android:id="@+id/imageArrowGreen"
                 android:visibility="invisible"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="Arrow"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@mipmap/ic_shape"
                 android:id="@+id/imageArrowYellow"
                 android:visibility="invisible"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="Arrow"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@mipmap/ic_shape"
                 android:id="@+id/imageArrowOrange"
                 android:visibility="invisible"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="Arrow"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@mipmap/ic_shape"
                 android:id="@+id/imageArrowRed"
                 android:visibility="invisible"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:contentDescription="Arrow"/>
     </LinearLayout>
     <androidx.appcompat.widget.LinearLayoutCompat
 
@@ -76,19 +81,18 @@
               android:visibility="gone"
               android:background="@color/colorRiskBarLightGreen"
               android:layout_weight="1"
-              android:layout_marginLeft="1dp"
+              android:layout_marginStart="1dp"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintHorizontal_bias="0.5"
               app:layout_constraintEnd_toStartOf="@+id/RiskBarGreen"
-              tools:layout_editor_absoluteY="432dp"
-        />
+              tools:layout_editor_absoluteY="432dp"/>
 
         <View android:id="@+id/RiskBarGreen"
               android:layout_width="wrap_content"
               android:layout_height="6dp"
               android:background="@color/colorRiskBarGreen"
               android:layout_weight="1"
-              android:layout_marginLeft="1dp"
+              android:layout_marginStart="1dp"
               app:layout_constraintStart_toEndOf="@+id/RiskBarLightGreen"
               app:layout_constraintHorizontal_bias="0.5"
               app:layout_constraintEnd_toStartOf="@+id/RiskBarYellow"
@@ -102,13 +106,12 @@
               android:visibility="gone"
               android:background="@color/colorRiskBarGreen"
               android:layout_weight="1"
-              android:layout_marginLeft="1dp"
+              android:layout_marginStart="1dp"
               app:layout_constraintStart_toEndOf="@+id/RiskBarLightGreen"
               app:layout_constraintHorizontal_bias="0.5"
               app:layout_constraintEnd_toStartOf="@+id/RiskBarYellow"
               app:layout_constraintTop_toTopOf="@+id/RiskBarLightGreen"
-              app:layout_constraintBottom_toBottomOf="@+id/RiskBarLightGreen"
-        />
+              app:layout_constraintBottom_toBottomOf="@+id/RiskBarLightGreen"/>
 
 
         <View android:id="@+id/RiskBarYellow"
@@ -116,7 +119,7 @@
               android:layout_height="6dp"
               android:background="@color/colorRiskBarYellow"
               android:layout_weight="1"
-              android:layout_marginLeft="1dp"
+              android:layout_marginStart="1dp"
               app:layout_constraintStart_toEndOf="@+id/RiskBarOrange"
               app:layout_constraintHorizontal_bias="0.5"
               app:layout_constraintEnd_toEndOf="parent"
@@ -130,7 +133,7 @@
               android:visibility="gone"
               android:background="@color/colorRiskBarYellow"
               android:layout_weight="1"
-              android:layout_marginLeft="1dp"
+              android:layout_marginStart="1dp"
               app:layout_constraintStart_toEndOf="@+id/RiskBarOrange"
               app:layout_constraintHorizontal_bias="0.5"
               app:layout_constraintEnd_toEndOf="parent"
@@ -143,7 +146,7 @@
               android:layout_height="6dp"
               android:background="@color/colorRiskBarOrange"
               android:layout_weight="1"
-              android:layout_marginLeft="1dp"
+              android:layout_marginStart="1dp"
               app:layout_constraintStart_toEndOf="@+id/RiskBarYellow"
               app:layout_constraintHorizontal_bias="0.5"
               app:layout_constraintEnd_toStartOf="@+id/RiskBarYellow"
@@ -157,7 +160,7 @@
               android:layout_height="10dp"
               android:background="@color/colorRiskBarOrange"
               android:layout_weight="1"
-              android:layout_marginLeft="1dp"
+              android:layout_marginStart="1dp"
               android:visibility="gone"
               app:layout_constraintStart_toEndOf="@+id/RiskBarYellow"
               app:layout_constraintHorizontal_bias="0.5"
@@ -172,7 +175,7 @@
               android:layout_height="6dp"
               android:background="@drawable/radius_risk_bar_red"
               android:layout_weight="1"
-              android:layout_marginLeft="1dp"
+              android:layout_marginStart="1dp"
               app:layout_constraintStart_toEndOf="@+id/RiskBarGreen"
               app:layout_constraintHorizontal_bias="0.5"
               app:layout_constraintEnd_toStartOf="@+id/RiskBarOrange"
@@ -185,7 +188,7 @@
               android:layout_height="10dp"
               android:background="@color/colorRiskBarRed"
               android:layout_weight="1"
-              android:layout_marginLeft="1dp"
+              android:layout_marginStart="1dp"
               android:visibility="gone"
               app:layout_constraintStart_toEndOf="@+id/RiskBarGreen"
               app:layout_constraintHorizontal_bias="0.5"
