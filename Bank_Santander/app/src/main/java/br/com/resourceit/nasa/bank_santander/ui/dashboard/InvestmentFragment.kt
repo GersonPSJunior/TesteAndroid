@@ -51,26 +51,31 @@ class InvestmentFragment(var viewHome : BankContract.View) : Fragment(), Investm
             1 -> {
                 RiskBarLightGreen.visibility = View.GONE
                 SelectedRiskBarLightGreen.visibility = View.VISIBLE
+                imageArrowLightGreen.visibility = View.VISIBLE
             }
 
             2 -> {
                 RiskBarGreen.visibility = View.GONE
                 SelectedRiskBarGreen.visibility = View.VISIBLE
+                imageArrowGreen.visibility = View.VISIBLE
             }
 
             3 -> {
                 RiskBarYellow.visibility = View.GONE
                 SelectedRiskBarYellow.visibility = View.VISIBLE
+                imageArrowYellow.visibility = View.VISIBLE
             }
 
             4 -> {
                 RiskBarOrange.visibility = View.GONE
                 SelectedRiskBarOrange.visibility = View.VISIBLE
+                imageArrowOrange.visibility = View.VISIBLE
             }
 
             5 -> {
                 RiskBarRed.visibility = View.GONE
                 SelectedRiskBarRed.visibility = View.VISIBLE
+                imageArrowRed.visibility = View.VISIBLE
             }
         }
 
@@ -79,18 +84,23 @@ class InvestmentFragment(var viewHome : BankContract.View) : Fragment(), Investm
 
     private fun hideAllSelectedRiskBar() {
         SelectedRiskBarRed.visibility = View.GONE
+        imageArrowRed.visibility = View.INVISIBLE
         RiskBarRed.visibility = View.VISIBLE
 
         SelectedRiskBarOrange.visibility = View.GONE
+        imageArrowOrange.visibility = View.INVISIBLE
         RiskBarOrange.visibility = View.VISIBLE
 
         SelectedRiskBarYellow.visibility = View.GONE
+        imageArrowYellow.visibility = View.INVISIBLE
         RiskBarYellow.visibility = View.VISIBLE
 
         SelectedRiskBarGreen.visibility = View.GONE
+        imageArrowGreen.visibility = View.INVISIBLE
         RiskBarGreen.visibility = View.VISIBLE
 
         SelectedRiskBarLightGreen.visibility = View.GONE
+        imageArrowLightGreen.visibility = View.INVISIBLE
         RiskBarLightGreen.visibility = View.VISIBLE
     }
 
